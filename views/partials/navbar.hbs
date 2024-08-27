@@ -1,0 +1,31 @@
+<div class="container py-3">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <div class="mr-5">
+        <a href="/">
+          <img src="https://gelectronics.uz/logo_product.jpg" width="300px" />
+          <title>Gelectronics</title>
+        </a>
+      </div>
+      <div class="ml-50 text-center">
+        <a href="tel:+998712000405">Tel: 71 200 04 05</a>
+      </div>
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <div class="btn-group ml-3" role="group" aria-label="Basic mixed styles example">
+          {{#if userId}}
+            <button type="button" class="btn btn-danger active">
+              <a href="/logout" class="text-light text-decoration-none">Log out</a>
+            </button>
+          {{else}}
+            <button type="button" class="btn btn-primary nl-3">
+              <a href="/login" class="text-light text-decoration-none">Login</a>
+            </button>
+            <button type="button" class="btn btn-success">
+              <a href="/register" class="text-light text-decoration-none">Register</a></button>
+          {{/if}}
+        </div>
+
+      </nav>
+    </div>
+  </header>
+</div>

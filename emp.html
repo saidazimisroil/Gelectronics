@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Select</title>
+  </head>
+  <body>
+    <div class="input-group mb-3">
+      <label for="category" class="text fs-5 mr-2 mt-1">Category</label>
+      <select
+        id="category"
+        class="form-select"
+        aria-label="Default select example"
+        style="margin-left: 10px"
+        name="category"
+        onchange="updateSecondarySelect()">
+        <option value="other">Boshqa</option>
+        <option value="hmi">INOVANCE HMI</option>
+        <option value="plc">INOVANCE PLC</option>
+        <option value="inverter">INOVANCE INVERTER</option>
+        <option value="servo">INOVANCE SERVO</option>
+      </select>
+    </div>
+
+    <div class="input-group mb-3">
+      <label for="subCategory" class="text fs-5 mr-2 mt-1">Subcategory</label>
+      <select
+        id="subCategory"
+        class="form-select"
+        aria-label="Default select example"
+        style="margin-left: 10px"
+        name="subCategory">
+        <!-- Secondary select options will be dynamically added here -->
+      </select>
+    </div>
+
+    <script>
+      function updateSecondarySelect() {
+        var selectedCategory = document.getElementById("category").value;
+        var subCategorySelect = document.getElementById("subCategory");
+        subCategorySelect.innerHTML = "";
+        if (selectedCategory === "hmi") {
+          subCategorySelect.add(new Option("7dyum", "7dyum"));
+          subCategorySelect.add(new Option("10dyum", "10dyum"));
+          subCategorySelect.add(new Option("15dyum", "15dyum"));
+        } else if (selectedCategory === "plc") {
+          subCategorySelect.add(new Option("h1u", "h1u"));
+          subCategorySelect.add(new Option("h3u", "h3u"));
+          subCategorySelect.add(new Option("h5u", "h5u"));
+        } else if (selectedCategory === "inverter") {
+          subCategorySelect.add(new Option("md200", "md200"));
+          subCategorySelect.add(new Option("md290", "md290"));
+          subCategorySelect.add(new Option("md310", "md310"));
+          subCategorySelect.add(new Option("md500", "md500"));
+          subCategorySelect.add(new Option("cs710", "cs710"));
+        } else if (selectedCategory === "servo") {
+          subCategorySelect.add(new Option("sv660n", "sv660n"));
+          subCategorySelect.add(new Option("sv660p", "sv660p"));
+          subCategorySelect.add(new Option("ms1h1", "ms1h1"));
+          subCategorySelect.add(new Option("ms1h2", "ms1h2"));
+          subCategorySelect.add(new Option("ms1h3", "ms1h3"));
+        }
+      }
+    </script>
+  </body>
+</html>

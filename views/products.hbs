@@ -1,0 +1,28 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-3">
+  {{#if products}}
+    {{#each products}}
+      <div class="col">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <a href="/product/{{_id}}">
+              <img src="{{image}}" class="card-img-top" alt="product" />
+            </a>
+            <p class="card-text fw-bold">{{title}}</p>
+            <div class="d-flex justify-content-end align-items-center">
+              <small class="text-body-secondary fs-6">Price: {{price}}$</small>
+            </div>
+            <div class="d-flex justify-content-end align-items-center">
+              <small class="text-body-secondary fs-6">Amount: {{amount}}</small>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a type="button" class="btn btn-outline-primary" href="/product/{{_id}}">About</a>
+            <a type="button" class="btn btn-outline-secondary" href="/edit/{{_id}}">Edit</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    <h1>No Products</h1>
+  {{/if}}
+</div>

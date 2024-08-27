@@ -1,0 +1,38 @@
+<div class="w-75 mx-auto">
+  <p class="fs-1">Skladdan tovar sotish</p>
+  {{#if soldError}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error! </strong>{{soldError}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {{/if}}
+  <form action="/sold" method="post">
+
+    <div class="input-group mb-3">
+      <label for="seriya" class="text fs-5 mr-2 mt-1">Seriya</label>
+      <select
+        id="seriya"
+        class="form-select"
+        aria-label="Default select example"
+        style="margin-left: 10px;"
+        name="seriya"
+      >
+        {{#each added}}
+          <option value="{{seriya}}">{{seriya}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea
+        class="form-control"
+        placeholder="comment"
+        id="floatingTextarea2"
+        name="comment"
+        style="height: 100px"
+      ></textarea>
+      <label for="floatingTextarea2">Comment</label>
+    </div>
+
+    <button class="btn btn-primary mt-3">Sold</button>
+  </form>
+</div>
